@@ -5,7 +5,7 @@ let books = {
   4: {
     author: "Unknown",
     title: "The Epic Of Gilgamesh",
-    reviews: { 1: "Praise to the man" },
+    reviews: {},
   },
   5: { author: "Unknown", title: "The Book Of Job", reviews: {} },
   6: { author: "Unknown", title: "One Thousand and One Nights", reviews: {} },
