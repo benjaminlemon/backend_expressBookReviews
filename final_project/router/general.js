@@ -25,7 +25,7 @@ public_users.post("/register", (req, res) => {
 });
 
 // Get the book list available in the shop
-public_users.get("/", function (req, res) {
+public_users.get("/", async function (req, res) {
   return new Promise((resolve, reject) => {
     if (Object.keys(books).length > 0) {
       let availableBookArray = [];
@@ -48,7 +48,7 @@ public_users.get("/", function (req, res) {
 });
 
 // Get book details based on ISBN
-public_users.get("/isbn/:isbn", function (req, res) {
+public_users.get("/isbn/:isbn", async function (req, res) {
   return new Promise((resolve, reject) => {
     const isbn = parseInt(req.params.isbn);
 
@@ -67,7 +67,7 @@ public_users.get("/isbn/:isbn", function (req, res) {
 });
 
 // Get book details based on author
-public_users.get("/author/:author", function (req, res) {
+public_users.get("/author/:author", async function (req, res) {
   return new Promise((resolve, reject) => {
     const requestedAuthor = req.params.author;
     let booksByRequestedAuthor = [];
@@ -92,7 +92,7 @@ public_users.get("/author/:author", function (req, res) {
 });
 
 // Get all books based on title
-public_users.get("/title/:title", function (req, res) {
+public_users.get("/title/:title", async function (req, res) {
   return new Promise((resolve, reject) => {
     const requestedTitle = req.params.title;
     for (const book in books) {
